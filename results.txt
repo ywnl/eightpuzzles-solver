@@ -1,0 +1,103 @@
+# name: Jasper Hoong
+# email: jasperh@bu.edu
+#
+# name: Yewon Lee
+# email:ywnl@bu.edu
+
+puzzles with 5-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                               10                   5.0                118.5
+BFS                                     10                  5.0                  47.1
+DFS (depth limit 20)             10                 16.2               19072.7
+DFS (depth limit 50)             10                 48.2                49043.0
+Greedy Search (using h1)    10                  5.4                 70.4
+A* (using h1)                         10                  5.0                  6.7
+
+A* is the most efficient. DFS with depth limit 50 is the slowest. DFS and Greedy Search have higher average moves. Random, BFS, and A* have the optimal average moves. With a higher depth limit, DFS is less efficient. 
+
+
+
+puzzles with 10-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                               10                   12.6                5064.3
+BFS                                     10                  10.0                747.4
+DFS (depth limit 20)             10                 18.8               24858.0
+DFS (depth limit 50)             takes more than 30 seconds 
+Greedy Search (using h1)    10                 77.8               1470.4               
+A* (using h1)                         10                  10                    30.2
+
+DFS with depth limit 50 took the longest. Both DFS were the slowest algorithms. A* and BFS had the same number of moves, however A* tested less states on average, making it a bit more efficient.
+
+puzzles with 15-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                               takes more than 30 seconds
+BFS                                     10                   15                  12672.0
+DFS (depth limit 20)             10                 17.8                 68659.0
+DFS (depth limit 50)             takes more than 30 seconds
+Greedy Search (using h1)    takes more than 30 seconds         
+A* (using h1)                         10                  15.0                 347.7
+
+All of the algorithms were significantly slower than A*. However, A*, DFS with depth limit 20, and BFS all had similar average number of moves. DFS with depth limit 50, random, and Greedy Searcher using h1 all took way too long to solve the puzzle.
+
+Heuristic h2
+----------------------
+This heuristic assigns points to each tile. If the tile is in either the wrong column or row, but not both, it gets one point. If the tile is in both the wrong column and row, it gets two points. Then, we add up all the total points and return it.
+
+
+
+puzzles with 18-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)   takes more than 1 min
+Greedy (heuristic h2)          10      89.8       374.9
+A* (heuristic h1)                  10     18.0      1861.7
+A* (heuristic h2)                 10       18.0          576.0
+Greedy with using h1 takes more than 1 minute to get the results. Greedy with h2 has the lowest average states tested. A* with both h1 and h2 have the optimal average moves. The difference between two is the average states tested. A* with h2 has lower average states tested. Greedy with h2 has the highest average moves.
+
+puzzles with 21-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)    takes more than 1 min
+Greedy (heuristic h2)          10              113.0               428.9
+A* (heuristic h1)                  10               21.0                7728.5
+A* (heuristic h2)                   10              21.0                1974.6
+
+H2 heuristic function reduces the number of states tested on average. At the same time, A* algorithm reduces the average number of moves. A* with heuristic h2 is by far the most efficient and fast algorithm.
+
+puzzles with 24-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)    takes more than 1 min
+Greedy (heuristic h2)          10            134.4            583.9
+A* (heuristic h1)               takes more than 1 min   
+A* (heuristic h2)                   10             24.0             7205.2
+
+Both algorithms using h1 took too long to solve the puzzle. The algorithms with h2, however, were able to solve the puzzles more quickly. Surprisingly, Greedy searcher with h2 tested less states than A*. However, A* with h2 had less average moves than Greedy.
+
+puzzles with 27-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)         10        163.4               2775.8
+Greedy (heuristic h2)         10        109.2               393.1
+A* (heuristic h1)                  takes more than 1 min
+A* (heuristic h2)                  takes more than 1 min
+
+Both A* algorithms took too long to solve the puzzle. On the other hand, both Greedy algorithms were able to solve the puzzles. Greedy with h2 was more efficient than Greedy with h1, having less average moves and drastically less average states tested.
+
+
+
+
+
+
+
+
